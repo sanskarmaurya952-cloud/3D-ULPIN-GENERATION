@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f8fafc;
+    color: #0f172a;
+    overflow-x: hidden;
+  }
+  #root {
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+  }
+}
+
+/* Subtle Institutional GIS Topographic & Cadastral Background Patterns */
+.bg-topo-pattern {
+  background-color: #f8fafc;
+  background-image: 
+    radial-gradient(#94a3b8 0.75px, transparent 0.75px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cg fill='none' stroke='%230284c7' stroke-width='0.75' stroke-opacity='0.045'%3E%3Cpath d='M0 40 C 60 20, 120 70, 200 40 C 280 10, 340 60, 400 30'/%3E%3Cpath d='M0 90 C 80 60, 140 120, 220 80 C 300 40, 360 110, 400 80'/%3E%3Cpath d='M0 140 C 50 110, 110 160, 190 130 C 270 100, 330 170, 400 130'/%3E%3Cpath d='M0 190 C 70 160, 150 210, 230 170 C 310 130, 370 200, 400 180'/%3E%3Cpath d='M0 240 C 60 210, 130 270, 210 230 C 290 190, 350 260, 400 230'/%3E%3Cpath d='M0 290 C 80 260, 160 320, 240 280 C 320 240, 380 310, 400 280'/%3E%3Cpath d='M0 340 C 50 310, 120 370, 200 330 C 280 290, 340 360, 400 330'/%3E%3Cpath d='M0 390 C 70 360, 150 420, 230 380 C 310 340, 370 410, 400 380'/%3E%3C/g%3E%3Cg fill='none' stroke='%231e3a8a' stroke-width='0.5' stroke-dasharray='4,4' stroke-opacity='0.035'%3E%3Crect x='40' y='40' width='120' height='90'/%3E%3Crect x='200' y='60' width='140' height='100'/%3E%3Crect x='70' y='180' width='110' height='130'/%3E%3Crect x='220' y='210' width='130' height='120'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 24px 24px, 400px 400px;
+}
+
+/* Header & Dark Panel Cadastral Grid Overlay */
+.bg-cadastre-dark {
+  background-color: #0a192f;
+  background-image: 
+    linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%2338bdf8' stroke-width='0.6' stroke-opacity='0.04'%3E%3Cpolygon points='30,30 80,10 130,40 90,80'/%3E%3Cpolygon points='100,90 170,70 190,130 120,150'/%3E%3Cpolygon points='20,110 70,95 85,165 35,175'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 32px 32px, 32px 32px, 200px 200px;
+}
+
+/* Certificate Watermark Security Background */
+.bg-certificate-seal {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cg fill='none' stroke='%230f172a' stroke-width='0.6' stroke-opacity='0.025'%3E%3Ccircle cx='150' cy='150' r='120'/%3E%3Ccircle cx='150' cy='150' r='100' stroke-dasharray='3,3'/%3E%3Ccircle cx='150' cy='150' r='80'/%3E%3Cpolygon points='150,50 236,100 236,200 150,250 64,200 64,100'/%3E%3Cpolygon points='150,70 219,110 219,190 150,230 81,190 81,110' stroke-dasharray='2,2'/%3E%3Cpath d='M150 30 L150 270 M30 150 L270 150' stroke-opacity='0.02'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 280px 280px;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Print Certificate Specific Styling */
+@media print {
+  body {
+    background-color: #ffffff !important;
+  }
+  header, aside, nav, button, .print\:hidden {
+    display: none !important;
+  }
+  #root {
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
